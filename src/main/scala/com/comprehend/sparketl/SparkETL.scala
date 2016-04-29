@@ -12,9 +12,11 @@ object SparkETL {
     println("hello world")
 
     val foo =  sqc.read.format("jdbc")
-      .option("url", "jdbc:postgresql://Xuan@192.168.2.132:5432/biomarin")
+      .option("url", "jdbc:postgresql://god1-postgres.sf.comprehend.com:5432/xli")
       .option("driver", "org.postgresql.Driver")
-      .option("dbtable", "study_110_504_csv.stream_page_status")
+      .option("user", "comprehend")
+      .option("password", "office2005")
+      .option("dbtable", "spark.testtable")
       .load()
 
     foo.show()
